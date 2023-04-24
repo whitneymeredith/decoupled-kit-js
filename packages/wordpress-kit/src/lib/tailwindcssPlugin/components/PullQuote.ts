@@ -1,24 +1,23 @@
-export const PullQuoteComponent = ({ quoteSize }: { quoteSize: string }) => ({
+import { alignment } from './shared';
+
+export const PullQuoteComponent = {
 	'.wp-block-pullquote': {
+		...alignment,
 		'&.alignleft': {
-			float: 'left',
+			...alignment['&.alignleft'],
 			maxWidth: '30rem',
 			minWidth: '20rem',
 		},
 		'&.alignright': {
-			float: 'right',
+			...alignment['&.alignright'],
 			maxWidth: '30rem',
 			minWidth: '20rem',
 		},
-		'&.alignwide': {
-			maxWidth: '850px',
-		},
-		'&.alignfull': {
-			maxWidth: 'none',
-		},
 		blockquote: {
 			p: {
-				fontSize: quoteSize,
+				fontSize: '1.75em',
+				lineHeight: '1.6',
+				fontWeight: '300',
 			},
 			cite: {
 				textTransform: 'uppercase',
@@ -29,13 +28,15 @@ export const PullQuoteComponent = ({ quoteSize }: { quoteSize: string }) => ({
 			border: 'none',
 			color: 'inherit',
 			quotes: 'none',
+			fontStyle: 'normal',
 		},
 		margin: 'auto',
 		maxWidth: '650px',
 		borderColor: 'currentColor',
-		borderWidth: '3px 0',
+		borderWidth: '1px 0',
 		marginBottom: '0',
 		marginTop: '0',
 		padding: '2em 0',
+		textAlign: 'center',
 	},
-});
+};

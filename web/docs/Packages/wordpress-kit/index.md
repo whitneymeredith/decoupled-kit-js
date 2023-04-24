@@ -1,15 +1,15 @@
 ---
-id: 'index'
-title: 'decoupled-kit-js'
-sidebar_label: 'Readme'
+id: "index"
+title: "decoupled-kit-js"
+sidebar_label: "Readme"
 sidebar_position: 0
 custom_edit_url: null
 ---
 
-# WordPress Kit
+# Pantheon Systems WordPress Kit
 
-Utilities to help simplify the process of sourcing data from a WordPress back
-end for a decoupled front end hosted on Pantheon.
+Utilities to help simplify the process of sourcing data from a WordPress backend
+for a Front-End Site hosted on Pantheon.
 
 ## Installation
 
@@ -25,24 +25,24 @@ package.
 ### GraphqlClientFactory
 
 1. Import the module in your JavaScript application:
-   ```
+   ```js
    import { GraphqlClientFactory } from '@pantheon-systems/wordpress-kit';
    ```
 2. Create an instance of the client and specify your API:
-   ```
+   ```js
    const client = new GraphqlClientFactory(
-     'http://localhost:4000/graphql'
+   	'my.wordpressbackend.com/wp/graphql',
    ).create();
    ```
 
 ### TailwindcssPlugin
 
 1.  Import the plugin to your `tailwind.config.js` file
-    ```
-    const { tailwindcssPlugin } = require("@pantheon-systems/wordpress-kit");
+    ```js
+    const { tailwindcssPlugin } = require('@pantheon-systems/wordpress-kit');
     ```
 1.  Add the plugin to your `plugins` array:
-    ```
+    ```js
     /** @type {import('@pantheon-systems/wordpress-kit').TailwindcssConfig} */
     module.exports = {
       content: [ ... ],
@@ -57,7 +57,7 @@ package.
 ## API Reference
 
 To see the API reference,
-[visit our monorepo](https://github.com/pantheon-systems/decoupled-kit-js/blob/canary/web/docs/Packages/wordpress-kit/modules.md)
+[visit our docs site](https://decoupledkit.pantheon.io/docs/Packages/wordpress-kit)
 
 ## Contributing
 

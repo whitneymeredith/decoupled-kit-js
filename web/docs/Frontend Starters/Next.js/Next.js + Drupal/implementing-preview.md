@@ -1,7 +1,8 @@
 ---
 id: 'next-drupal-preview'
 title: 'Implementing Decoupled Preview'
-slug: '/Frontend Starters/Next.js/Next.js + Drupal/Implementing Preview'
+slug: '/frontend-starters/nextjs/nextjs-drupal/implementing-preview'
+sidebar_position: 2
 ---
 
 ## Before You Begin
@@ -16,7 +17,9 @@ instance.
 1. Click **Edit** on the consumer you are using and add a new secret. Note this
    value down as well.
 1. We now have a client that can use our preview site. To configure the preview
-   site, navigate to **Structure** > **Preview Sites**
+   site, navigate to **Structure** > **Preview Sites**. Consult
+   [Configuring a Preview Site](../../../Backend%20Starters/Decoupled%20Drupal/configuring-preview-site.md)
+   for more information.
 1. Set the URL to point to http(s)://{YOUR_SITE_URL}/api/preview replacing
    `{YOUR_SITE_URL}` with the URL of your frontend site, or `localhost:3000` for
    testing preview locally.
@@ -42,7 +45,7 @@ import { getPreview } from '../../lib/get-preview';
 import { isMultiLanguage } from '../../lib/isMultiLanguage';
 import {
 	getCurrentLocaleStore,
-	globalDrupalStateAuthStores,
+	globalDrupalStateStores,
 } from '../../lib/stores';
 
 // your React component here
@@ -56,7 +59,7 @@ export async function getStaticProps(context) {
 		? context.previewData.previewLang
 		: context.locale;
 	// set the store based on the language
-	const store = getCurrentLocaleStore(lang, globalDrupalStateAuthStores);
+	const store = getCurrentLocaleStore(lang, globalDrupalStateStores);
 	// gets preview data from the Drupal instance, or in the case of a revision,
 	// sets the proper jsonapi param to fetch the revision from Drupal.
 	context.preview && getPreview(context, 'node--article');
@@ -88,3 +91,8 @@ If you'd like to view another revision or edit, you may need to clear the
 current previewData cookie. This can be done by going to
 {YOUR_SITE_URL}/api/clear-preview. On successful clear, you will be redirected
 to the homepage.
+
+## Limitations
+
+Content that is saved as a draft can not be previewed. Currently, preview
+content must be published or a published revision.

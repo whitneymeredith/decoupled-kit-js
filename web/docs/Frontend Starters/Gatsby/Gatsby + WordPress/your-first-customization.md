@@ -1,7 +1,8 @@
 ---
 id: 'gatsby-wordpress-customization'
 title: 'Your First WordPress Customization'
-slug: '/Frontend Starters/Gatsby WordPress/Your First WordPress Customization'
+slug: '/frontend-starters/gatsby/gatsby-wordpress/your-first-wordpress-customization'
+sidebar_position: 2
 ---
 
 ## Before You Begin

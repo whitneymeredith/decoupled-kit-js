@@ -1,0 +1,53 @@
+{
+	"name": "@pantheon-systems/cms-kit",
+	"version": "0.2.2",
+	"description": "Pantheon Decoupled Kit's CMS Kit",
+	"license": "GPL-3.0-or-later",
+	"homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
+	"bugs": "https://github.com/pantheon-systems/decoupled-kit-js/issues/new?template=bug-report-template.yml",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pantheon-systems/decoupled-kit-js"
+	},
+	"author": "@pantheon-systems",
+	"files": [
+		"dist/*"
+	],
+	"types": "dist/index.d.ts",
+	"main": "./dist/cms-kit.umd.js",
+	"module": "./dist/cms-kit.es.js",
+	"exports": {
+		".": {
+			"import": "./dist/cms-kit.es.js",
+			"require": "./dist/cms-kit.umd.js"
+		}
+	},
+	"prettier": "@pantheon-systems/workspace-configs/prettier",
+	"typedoc": {
+		"entryPoint": "./index.ts"
+	},
+	"scripts": {
+		"build": "pnpm clean && vite build",
+		"clean": "pnpm rimraf ./dist",
+		"watch": "pnpm clean && vite build --watch",
+		"typedoc": "typedoc",
+		"test": "vitest run --coverage",
+		"test:watch": "vitest",
+		"update-snapshots": "vitest run --update",
+		"eslint": "eslint --ext .js,.ts,.jsx,.tsx src --ignore-path .gitignore",
+		"eslint:fix": "eslint --ext .js,.ts,.jsx,.tsx src --fix --ignore-path .gitignore",
+		"prettier": "prettier \"**/*.{js,ts,jsx,tsx,md}\" --check --ignore-path ../../.prettierignore",
+		"prettier:fix": "prettier \"**/*.{js,ts,jsx,tsx,md}\" --write --ignore-path ../../.prettierignore",
+		"lint-staged": "lint-staged"
+	},
+	"devDependencies": {
+		"@pantheon-systems/eslint-config": "*",
+		"@pantheon-systems/workspace-configs": "*",
+		"@rollup/plugin-typescript": "^11.0.0",
+		"@vitest/coverage-c8": "^0.29.8",
+		"eslint-plugin-prettier": "^4.2.1",
+		"prettier": "^2.8.7",
+		"rimraf": "^4.4.1",
+		"vitest": "^0.29.8"
+	}
+}

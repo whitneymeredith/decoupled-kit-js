@@ -1,8 +1,6 @@
-import GraphqlClientFactory from './src/lib/GraphqlClientFactory';
-import tailwindcssPlugin from './src/lib/TailwindcssPlugin';
 import { gql } from 'graphql-request';
+import { setSurrogateKeyHeader } from '@pantheon-systems/cms-kit';
 
-import type { TailwindcssConfig } from './src/types/TailwindcssPlugin';
-
-export { GraphqlClientFactory, gql, tailwindcssPlugin };
-export type { TailwindcssConfig };
+export { gql, setSurrogateKeyHeader };
+export * from './src/lib';
+export * from './src/types';

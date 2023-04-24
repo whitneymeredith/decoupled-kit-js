@@ -2,24 +2,25 @@
   "mode": "pre",
   "tag": "canary",
   "initialVersions": {
-    "@pantheon-systems/drupal-kit": "2.2.0",
-    "@pantheon-systems/nextjs-kit": "1.0.0",
-    "@pantheon-systems/wordpress-kit": "2.4.0",
-    "@pantheon-systems/gatsby-wordpress-starter": "2.0.0",
-    "@pantheon-systems/next-drupal-starter": "3.0.1",
-    "@pantheon-systems/next-wordpress-starter": "0.6.0",
-    "web": "1.0.0",
-    "@pantheon-systems/eslint-config": "0.0.0"
+    "@pantheon-systems/eslint-config": "0.0.0",
+    "@pantheon-systems/cms-kit": "0.2.2",
+    "@pantheon-systems/eslint-config-decoupled-kit": "0.1.0",
+    "@pantheon-systems/decoupled-kit-configs": "0.1.0",
+    "create-pantheon-decoupled-kit": "0.6.0",
+    "@pantheon-systems/drupal-kit": "4.3.0",
+    "@pantheon-systems/nextjs-kit": "1.7.2",
+    "@pantheon-systems/wordpress-kit": "2.14.2",
+    "web": "1.0.0"
   },
   "changesets": [
-    "brown-taxis-pretend",
-    "cool-suits-marry",
-    "fifty-months-matter",
-    "four-pans-protect",
-    "fuzzy-numbers-wink",
-    "many-buses-do",
-    "mean-crabs-sin",
-    "seven-suns-shave",
-    "sharp-jokes-begin"
+    "dirty-rats-share",
+    "fast-foxes-play",
+    "fluffy-suits-knock",
+    "olive-wolves-call",
+    "polite-suns-look",
+    "popular-dingos-search",
+    "shaggy-rockets-thank",
+    "thirty-phones-glow",
+    "weak-dragons-agree"
   ]
 }

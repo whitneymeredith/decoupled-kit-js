@@ -1,5 +1,10 @@
 import { Config } from 'tailwindcss';
-import { colorList, fontSizeList, gradientList } from './Constants';
+import {
+	colorList,
+	fontSizeList,
+	gradientList,
+	proseOverride,
+} from './Constants';
 
 const colorClasses = colorList.map((color) => `.has-${color.name}-color`);
 
@@ -22,12 +27,14 @@ const gradientClasses = gradientList.map(
 export const mergeToConfig: Config = {
 	content: [],
 	safelist: [
+		'.has-text-color',
 		...colorClasses,
 		...gradientClasses,
 		...borderColorClasses,
 		'.has-background',
 		...backgroundColorClasses,
 		...fontSizeClasses,
+		'.ps-wp-content',
 		'.wp-block-table',
 		'.has-drop-cap',
 		'.has-text-align-center',
@@ -41,5 +48,14 @@ export const mergeToConfig: Config = {
 		'.wp-block-gallery',
 		'.wp-block-audio',
 		'.wp-block-cover',
+		'.wp-block-media-text',
+		'.wp-block-buttons',
+		'.wp-block-file',
+		'.wp-block-embed',
+		'.wp-block-video',
+		'.wp-block-spacer',
+		'.wp-block-separator',
+		'.wp-block-columns',
 	],
+	...proseOverride,
 };

@@ -1,4 +1,4 @@
-name: "Canary Release"
+name: 'Canary Release'
 
 on:
   push:
@@ -11,24 +11,21 @@ jobs:
     name: canary version and publish
     env:
       CI: true
-      PNPM_CACHE_FOLDER: .pnpm-store
     timeout-minutes: 15
     runs-on: ubuntu-latest
     steps:
-      - name: checkout code repository
-        uses: actions/checkout@v2
+      # Checkout the repo and setup pnpm
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - name: setup node.js
-        uses: actions/setup-node@v2
+      - uses: pnpm/action-setup@v2
         with:
-          node-version: 16
-      - name: install pnpm
-        run: npm i pnpm@7.4.0 -g
-      - name: Setup npmrc
-        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
-      - name: setup pnpm config
-        run: pnpm config set store-dir $PNPM_CACHE_FOLDER
+          version: 8.1.0
+      - name: Setup nodejs
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'pnpm'
       - name: install dependencies
         run: pnpm install
       - name: create and publish versions
@@ -36,7 +33,29 @@ jobs:
         with:
           version: pnpm ci:version
           publish: pnpm ci:publish
-          commit: "canary-release"
-          title: "Canary Release"
+          commit: 'canary-release'
+          title: 'Canary Release'
         env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Send custom JSON data to Slack workflow
+        uses: slackapi/slack-github-action@v1.23.0
+        id: slack
+        with:
+          # For posting a rich message using Block Kit
+          payload: |
+            {
+              "text": "GitHub Action result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}",
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "GitHub Action result: ${{ job.status }}\n${{ github.event.pull_request.html_url || github.event.head_commit.url }}"
+                  }
+                }
+              ]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK

@@ -1,6 +1,6 @@
 {
 	"name": "@pantheon-systems/nextjs-kit",
-	"version": "1.1.0-canary.1",
+	"version": "1.7.2",
 	"description": "Pantheon Decoupled Kit's Next.js Kit",
 	"license": "GPL-3.0-or-later",
 	"homepage": "https://github.com/pantheon-systems/decoupled-kit-js#readme",
@@ -11,11 +11,11 @@
 	},
 	"author": "@pantheon-systems",
 	"files": [
-		"dist"
+		"dist/*"
 	],
+	"types": "dist/index.d.ts",
 	"main": "./dist/nextjs-kit.umd.js",
 	"module": "./dist/nextjs-kit.es.js",
-	"types": "./dist/index.d.ts",
 	"exports": {
 		".": {
 			"require": "./dist/nextjs-kit.umd.js",
@@ -23,10 +23,14 @@
 		},
 		"./style.css": "./dist/style.css"
 	},
-	"prettier": "@pantheon-systems/configs/prettier",
+	"prettier": "@pantheon-systems/workspace-configs/prettier",
+	"typedoc": {
+		"entryPoint": "./index.ts"
+	},
 	"scripts": {
-		"build": "tsc && vite build",
-		"watch": "tsc && vite build --watch",
+		"build": "pnpm clean && vite build",
+		"clean": "pnpm rimraf ./dist",
+		"watch": "vite build --watch",
 		"typedoc": "typedoc",
 		"test": "vitest run",
 		"test:watch": "vitest",
@@ -39,23 +43,28 @@
 	},
 	"devDependencies": {
 		"@pantheon-systems/eslint-config": "*",
-		"@pantheon-systems/configs": "*",
-		"@testing-library/react": "12.1.5",
-		"@vitejs/plugin-react": "^2.0.0",
-		"autoprefixer": "^10.4.4",
-		"c8": "^7.12.0",
-		"next": "^12.2.5",
-		"postcss": "^8.4.12",
-		"react": "17.0.2",
-		"react-dom": "17.0.2",
-		"tailwindcss": "3.1.6",
-		"vite-plugin-dts": "^1.4.1",
-		"vitest": "^0.18.0"
+		"@pantheon-systems/workspace-configs": "*",
+		"@rollup/plugin-typescript": "^11.0.0",
+		"@tailwindcss/typography": "^0.5.9",
+		"@testing-library/react": "14.0.0",
+		"@vitejs/plugin-react": "^3.1.0",
+		"@vitest/coverage-c8": "^0.29.8",
+		"autoprefixer": "^10.4.14",
+		"eslint-plugin-prettier": "^4.2.1",
+		"next": "^13.2.4",
+		"postcss": "^8.4.21",
+		"prettier": "^2.8.7",
+		"react": "18.2.0",
+		"react-dom": "18.2.0",
+		"rimraf": "^4.4.1",
+		"tailwindcss": "^3.3.1",
+		"vite": "^4.2.1",
+		"vitest": "^0.29.8"
 	},
 	"peerDependencies": {
-		"next": "^12.2.5",
-		"react": "17.0.2",
-		"react-dom": "17.0.2",
-		"tailwindcss": "^3.1.6"
+		"next": "^13.1.1",
+		"react": "18.2.0",
+		"react-dom": "18.2.0",
+		"tailwindcss": "^3.1.8"
 	}
 }

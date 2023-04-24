@@ -13,3 +13,8 @@ dist
 public
 
 *.d.ts
+
+# handlebars templates
+*.hbs
+**/__tests__/fixtures/**
+**/create-pantheon-decoupled-kit/src/templates/**

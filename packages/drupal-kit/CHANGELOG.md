@@ -1,16 +1,199 @@
 # @pantheon-systems/drupal-kit
 
+## 4.3.1-canary.0
+
+### Patch Changes
+
+- 79df700d: Update `getDrupalSearchResults()` function to escape more characters
+  in search queries.
+
+## 4.3.0
+
+### Minor Changes
+
+- 89c6bf58: Adds a `getDrupalSearchResults` helper function to query the Drupal
+  Search API.
+
+### Patch Changes
+
+- f50164f8: Updated dependencies
+- Updated dependencies [f50164f8]
+  - @pantheon-systems/cms-kit@0.2.2
+
+## 4.3.0-canary.1
+
+### Minor Changes
+
+- 89c6bf58: Adds a `getDrupalSearchResults` helper function to query the Drupal
+  Search API.
+
+## 4.2.2-canary.0
+
+### Patch Changes
+
+- f50164f8: Updated dependencies
+- Updated dependencies [f50164f8]
+  - @pantheon-systems/cms-kit@0.2.2-canary.0
+
+## 4.2.1
+
+### Patch Changes
+
+- b075c12: Update config package route.
+- Updated dependencies [b44ec7a]
+  - @pantheon-systems/cms-kit@0.2.1
+
+## 4.2.1-canary.0
+
+### Patch Changes
+
+- b075c12: Update config package route.
+- Updated dependencies [b44ec7a]
+  - @pantheon-systems/cms-kit@0.2.1-canary.0
+
+## 4.2.0
+
+### Minor Changes
+
+- 4efe223: Updated default Cache-Control value from
+  `public, s-maxage=10, stale-while-revalidate=600` to `s-public, maxage=600`
+
+## 4.2.0-canary.0
+
+### Minor Changes
+
+- 4efe223: Updated default Cache-Control value from
+  `public, s-maxage=10, stale-while-revalidate=600` to `s-public, maxage=600`
+
+## 4.1.0
+
+### Minor Changes
+
+- 4188395: `defaultFetch` now sets the `Pantheon-SKey` header instead of
+  `Pantheon-Debug`
+
+### Patch Changes
+
+- Updated dependencies [6dfcb56]
+  - @pantheon-systems/cms-kit@0.2.0
+
+## 4.1.0-canary.0
+
+### Minor Changes
+
+- 4188395: `defaultFetch` now sets the `Pantheon-SKey` header instead of
+  `Pantheon-Debug`
+
+### Patch Changes
+
+- Updated dependencies [6dfcb56]
+  - @pantheon-systems/cms-kit@0.2.0-canary.0
+
+## 4.0.0
+
+### Major Changes
+
+- a5c4275: Breaking: Moved addSurrogateKeyHeader to a new package and renamed it
+  setSurrogateKeyHeader. setSurrogateKeyHeader is exported from drupal-kit
+
+### Patch Changes
+
+- cd286c6: Update to latest version of DrupalState, v4.2.0
+- Updated dependencies [a5c4275]
+  - @pantheon-systems/cms-kit@0.1.0
+
+## 4.0.0-canary.0
+
+### Major Changes
+
+- a5c4275: Breaking: Moved addSurrogateKeyHeader to a new package and renamed it
+  setSurrogateKeyHeader. setSurrogateKeyHeader is exported from drupal-kit
+
+### Patch Changes
+
+- cd286c6: Update to latest version of DrupalState, v4.2.0
+- Updated dependencies [a5c4275]
+  - @pantheon-systems/cms-kit@0.1.0-canary.0
+
+## 3.1.0
+
+### Minor Changes
+
+- 74ce69e: Remove unused dependencies and clean up versions in package.json
+
+### Patch Changes
+
+- aea42f5: Fix types field in package.json
+
+## 3.1.0-canary.0
+
+### Minor Changes
+
+- 74ce69e: Remove unused dependencies and clean up versions in package.json
+
+### Patch Changes
+
+- aea42f5: Fix types field in package.json
+
+## 3.0.1
+
+### Patch Changes
+
+- 9dbbc6b: Updated dist bundle to include generated d.ts files
+
+## 3.0.1-canary.0
+
+### Patch Changes
+
+- 9dbbc6b: Updated dist bundle to include generated d.ts files
+
+## 3.0.0
+
+### Major Changes
+
+- 3ffcbbe: ## Breaking Changes
+
+  Removed the `query` option from `DrupalState`. This reflects the same upstream
+  change in `@gdwc/drupal-state`.
+
+  If you are still using a query after updating, you will receive a warning in
+  the console and the full payload for the requested object.
+
+### Patch Changes
+
+- ee835e8: Update prettierrc and reformat spaces -> tabs for accessibility
+
+## 3.0.0-canary.0
+
+### Major Changes
+
+- 3ffcbbe: ## Breaking Changes
+
+  Removed the `query` option from `DrupalState`. This reflects the same upstream
+  change in `@gdwc/drupal-state`.
+
+  If you are still using a query after updating, you will receive a warning in
+  the console and the full payload for the requested object.
+
+### Patch Changes
+
+- ee835e8: Update prettierrc and reformat spaces -> tabs for accessibility
+
 ## 2.2.0
 
 ### Minor Changes
 
-- 52e470a: drupal-kit's defaultFetch was updated to set a cache control header of `cache-control: public, s-maxage=10, stale-while-revalidate=600` if a response object is passed.
+- 52e470a: drupal-kit's defaultFetch was updated to set a cache control header
+  of `cache-control: public, s-maxage=10, stale-while-revalidate=600` if a
+  response object is passed.
 
 ## 2.2.0-canary.0
 
 ### Minor Changes
 
-- 52e470a: drupal-kit's defaultFetch was updated to set a cache control header of `cache-control: public, s-maxage=10, stale-while-revalidate=600` if a response object is passed.
+- 52e470a: drupal-kit's defaultFetch was updated to set a cache control header
+  of `cache-control: public, s-maxage=10, stale-while-revalidate=600` if a
+  response object is passed.
 
 ## 2.1.0
 
@@ -30,8 +213,9 @@
 
   ### Breaking
 
-  `PantheonDrupalState` no longer stores DrupalJsonapiParams in its state.
-  See https://git.drupalcode.org/project/drupal_state#request-parameters for more information.
+  `PantheonDrupalState` no longer stores DrupalJsonapiParams in its state. See
+  https://git.drupalcode.org/project/drupal_state#request-parameters for more
+  information.
 
 ## 1.1.5
 

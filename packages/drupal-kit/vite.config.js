@@ -1,14 +1,34 @@
-const path = require('path');
+import { defineConfig } from 'vitest/config';
+import dts from 'vite-plugin-dts';
 
-module.exports = {
-	optimizeDeps: {
-		include: ['@gdwc/drupal-state'],
-	},
-	build: {
-		lib: {
-			entry: path.resolve(__dirname, 'index.ts'),
-			name: 'DrupalKit',
-			fileName: (format) => `drupal-kit.${format}.js`,
-		},
-	},
+const globals = {
+	'isomorphic-fetch': 'isomorphicFetch',
+	'@gdwc/drupal-state': 'DrupalState',
+	'@pantheon-systems/cms-kit': 'cmsKit',
 };
+const external = [
+	'isomorphic-fetch',
+	'@gdwc/drupal-state',
+	'@pantheon-systems/cms-kit',
+];
+
+/** @type {import('vite').defineConfig} */
+export default defineConfig(() => {
+	return {
+		plugins: [dts({ insertTypesEntry: true })],
+		build: {
+			lib: {
+				entry: './index.ts',
+				name: 'drupal-kit',
+				formats: ['umd', 'es'],
+				fileName: (format) => `drupal-kit.${format}.js`,
+			},
+			rollupOptions: {
+				external,
+				output: {
+					globals,
+				},
+			},
+		},
+	};
+});
