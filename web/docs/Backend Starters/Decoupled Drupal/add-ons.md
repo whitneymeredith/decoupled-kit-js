@@ -4,7 +4,7 @@ title: 'Add-ons'
 slug: '/backend-starters/decoupled-drupal/add-ons'
 sidebar_position: 8
 ---
-
+Test content.
 ## Decoupled Kit Pantheon Search API
 
 This module automatically configures a Solr search API server for use on

@@ -1,12 +1,13 @@
 ---
-id: 'DrupalState'
-title: 'Class: DrupalState'
-sidebar_label: 'DrupalState'
+id: "DrupalState"
+title: "Class: DrupalState"
+sidebar_label: "DrupalState"
 sidebar_position: 0
 custom_edit_url: null
 ---
 
-Configures DrupalState to integrate with a Decoupled Drupal CMS on Pantheon
+Configures DrupalState to integrate
+with a Decoupled Drupal CMS on Pantheon
 
 **`See`**
 
@@ -26,8 +27,8 @@ DrupalStateConfig for the full list parameters
 
 #### Parameters
 
-| Name             | Type                |
-| :--------------- | :------------------ |
+| Name | Type |
+| :------ | :------ |
 | `«destructured»` | `DrupalStateConfig` |
 
 #### Overrides
@@ -36,25 +37,23 @@ DrupalState.constructor
 
 #### Defined in
 
-[drupal-kit/src/lib/PantheonDrupalState.ts:14](https://github.com/pantheon-systems/decoupled-kit-js/blob/5ccd9d50b/packages/drupal-kit/src/lib/PantheonDrupalState.ts#L14)
+[drupal-kit/src/lib/PantheonDrupalState.ts:18](https://github.com/whitneymeredith/decoupled-kit-js/blob/187fef11/packages/drupal-kit/src/lib/PantheonDrupalState.ts#L18)
 
 ## Methods
 
 ### fetchData
 
-▸ **fetchData**(`endpoint`, `res?`, `anon?`): `Promise`<`void` \|
-`TJsonApiBody`\>
+▸ **fetchData**(`endpoint`, `res?`, `anon?`): `Promise`<`void` \| `TJsonApiBody`\>
 
-If a query is provided, fetches data using apollo-link-json-api, otherwise uses
-out fetch method.
+If a query is provided, fetches data using apollo-link-json-api, otherwise uses out fetch method.
 
 #### Parameters
 
-| Name       | Type                                              | Default value | Description                     |
-| :--------- | :------------------------------------------------ | :------------ | :------------------------------ |
-| `endpoint` | `string`                                          | `undefined`   | the assembled JSON:API endpoint |
-| `res`      | `boolean` \| `ServerResponse`<`IncomingMessage`\> | `false`       | response object                 |
-| `anon`     | `boolean`                                         | `false`       | -                               |
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `endpoint` | `string` | `undefined` | the assembled JSON:API endpoint |
+| `res` | `boolean` \| `ServerResponse`<`IncomingMessage`\> | `false` | response object |
+| `anon` | `boolean` | `false` | - |
 
 #### Returns
 
@@ -68,4 +67,64 @@ DrupalState.fetchData
 
 #### Defined in
 
-[drupal-kit/src/lib/PantheonDrupalState.ts:42](https://github.com/pantheon-systems/decoupled-kit-js/blob/5ccd9d50b/packages/drupal-kit/src/lib/PantheonDrupalState.ts#L42)
+[drupal-kit/src/lib/PantheonDrupalState.ts:46](https://github.com/whitneymeredith/decoupled-kit-js/blob/187fef11/packages/drupal-kit/src/lib/PantheonDrupalState.ts#L46)
+
+___
+
+### getObject
+
+▸ **getObject**<`ReturnedData`\>(`args`): `Promise`<`void` \| `ReturnedData`\>
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `ReturnedData` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `args` | `GetObjectParams` |
+
+#### Returns
+
+`Promise`<`void` \| `ReturnedData`\>
+
+#### Overrides
+
+DrupalState.getObject
+
+#### Defined in
+
+[drupal-kit/src/lib/PantheonDrupalState.ts:70](https://github.com/whitneymeredith/decoupled-kit-js/blob/187fef11/packages/drupal-kit/src/lib/PantheonDrupalState.ts#L70)
+
+___
+
+### getObjectByPath
+
+▸ **getObjectByPath**<`ReturnedData`\>(`args`): `Promise`<`void` \| `ReturnedData`\>
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `ReturnedData` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `args` | `GetObjectByPathParams` |
+
+#### Returns
+
+`Promise`<`void` \| `ReturnedData`\>
+
+#### Overrides
+
+DrupalState.getObjectByPath
+
+#### Defined in
+
+[drupal-kit/src/lib/PantheonDrupalState.ts:75](https://github.com/whitneymeredith/decoupled-kit-js/blob/187fef11/packages/drupal-kit/src/lib/PantheonDrupalState.ts#L75)
