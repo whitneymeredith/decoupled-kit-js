@@ -1,5 +1,43 @@
 # @pantheon-systems/drupal-kit
 
+## 4.5.0-canary.0
+
+### Minor Changes
+
+- b9a05706: The `DrupalState` `defaultFetch` now sets the `Fastly-Debug` header
+  to obtain hashed surrogate keys instead of raw surrogate keys
+
+### Patch Changes
+
+- Updated dependencies [b9a05706]
+  - @pantheon-systems/cms-kit@0.3.0-canary.0
+
+## 4.4.0
+
+### Minor Changes
+
+- 98321554: Overload getObject methods to accept a generic that will be used as
+  the return type
+
+### Patch Changes
+
+- 79df700d: Update `getDrupalSearchResults()` function to escape more characters
+  in search queries.
+- Updated dependencies [98321554]
+  - @pantheon-systems/cms-kit@0.2.3
+
+## 4.4.0-canary.1
+
+### Minor Changes
+
+- 98321554: Overload getObject methods to accept a generic that will be used as
+  the return type
+
+### Patch Changes
+
+- Updated dependencies [98321554]
+  - @pantheon-systems/cms-kit@0.2.3-canary.0
+
 ## 4.3.1-canary.0
 
 ### Patch Changes

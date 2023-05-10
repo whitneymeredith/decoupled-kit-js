@@ -1,5 +1,24 @@
 # @pantheon-systems/cms-kit
 
+## 0.3.0-canary.0
+
+### Minor Changes
+
+- b9a05706: Update `setSurrogateKeyHeaders` to remove the first two keys which
+  are not wanted for proper cache purging
+
+## 0.2.3
+
+### Patch Changes
+
+- 98321554: Fix minor TypeScript error regarding iterating over Sets
+
+## 0.2.3-canary.0
+
+### Patch Changes
+
+- 98321554: Fix minor TypeScript error regarding iterating over Sets
+
 ## 0.2.2
 
 ### Patch Changes
